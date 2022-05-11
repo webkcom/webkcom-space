@@ -1,0 +1,12 @@
+<div class="container">
+    <app-header></app-header>
+    <div class="main">
+        <router-outlet></router-outlet>
+        <ul class="bg-bubbles">
+            <ng-container  *ngFor="let _ of [].constructor(10);">
+                <li></li>
+            </ng-container>
+        </ul>
+    </div>
+    <app-footer></app-footer>
+</div>

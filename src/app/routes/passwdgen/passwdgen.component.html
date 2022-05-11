@@ -1,0 +1,29 @@
+<div nz-row>
+    <li nz-col nzSpan="6"></li>
+    <nz-card nz-col nzSpan="12">
+        <p class="description">一个在线的密码生成器</p>
+
+        <h1><strong>{{value}}</strong></h1>
+        <div nz-row>
+            <p class="length">密码长度</p>
+            <nz-slider nz-col nzSpan="16" [(ngModel)]="length" [nzMin]="3" [nzMax]="20"></nz-slider>
+            <nz-input-number class="input-number" [nzMin]="3" [nzMax]="20" [(ngModel)]="length"></nz-input-number>
+        </div>
+
+        <div class="conditions">
+            <nz-space>
+                <label *nzSpaceItem nz-checkbox [(ngModel)]="containNumbers">
+                    <span>数字</span>
+                </label>
+                <label *nzSpaceItem nz-checkbox [(ngModel)]="containLetters">
+                    <span>字母</span>
+                </label>
+                <label *nzSpaceItem nz-checkbox [(ngModel)]="containSymbols">
+                    <span>符号</span>
+                </label>
+            </nz-space>
+            <button nz-button nzType="primary"(click)="getString()">生成密码</button>
+        </div>
+    </nz-card>
+    <li nz-col nzSpan="6"></li>
+</div>
