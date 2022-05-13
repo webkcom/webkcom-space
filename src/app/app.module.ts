@@ -9,11 +9,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { registerLocaleData } from '@angular/common';
-import localeZh from '@angular/common/locales/zh-Hans';
+import zh from '@angular/common/locales/zh';
 
-
-
-registerLocaleData(localeZh, 'zh-Hans');
+registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
