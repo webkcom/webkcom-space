@@ -1,4 +1,24 @@
-.header {
-    border-bottom     : 1px solid #e9e9e9;
-    box-shadow        : 0 2px 8px #f0f1f2;
+@import '../../../theme.less';
+
+#header {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    box-shadow: 0 2px 8px rgba(240, 241, 242, 65);
+
+    .menu-row {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
+    #nav {
+        height: 100%;
+        font-size: 14px;
+        border: 0;
+        line-height: @header-height;
+    }
+    
+
 }
