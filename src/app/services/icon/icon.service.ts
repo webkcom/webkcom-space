@@ -9,7 +9,7 @@ export class IconService {
   constructor(private iconService: NzIconService) { 
     this.iconService.fetchFromIconfont({
         // 个人iconfont项目地址
-        scriptUrl: 'https://at.alicdn.com/t/font_3335543_qc1qwrbihh9.js'
+        scriptUrl: 'https://at.alicdn.com/t/font_3335543_4nlcs7h4ztw.js'
       });
   }
 }
