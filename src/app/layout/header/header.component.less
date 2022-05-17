@@ -1,24 +1,10 @@
-@import '../../../theme.less';
-
-#header {
+@header-height:64px;
+.header {
+    overflow: hidden;
+    line-height: @header-height;
     background-color: white;
     position: relative;
     z-index: 1;
     max-width: 100%;
     box-shadow: 0 2px 8px rgba(240, 241, 242, 65);
-
-    .menu-row {
-        display: flex;
-        align-items: center;
-        margin: 0;
-    }
-
-    #nav {
-        height: 100%;
-        font-size: 14px;
-        border: 0;
-        line-height: @header-height;
-    }
-    
-
 }
