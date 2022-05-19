@@ -1,27 +1,73 @@
-<!-- <ul class="navigation" nz-row nz-menu nzMode="horizontal" [nzSelectable]="false"> -->
+<ul class="navigation" nz-row nz-menu nzMode="horizontal" [nzSelectable]="false">
+    <ng-container *ngIf="scrWidth>=700">
+        <li nz-menu-item nzMatchRouter [routerLink]="['/homepage']" routerLinkActive="router-link-active">
+            <i nz-icon nzType="home"></i>
+            首页
+        </li>
+    </ng-container>
 
-    <li nz-menu-item nzMatchRouter [routerLink]="['/homepage']" routerLinkActive="router-link-active">
-        <i nz-icon nzType="home"></i>
-        首页
-    </li>
-    <li nz-menu-item nzMatchRouter [routerLink]="['/tools']" routerLinkActive="router-link-active">
-        <i nz-icon nzType="tool"></i>
-        在线工具
-    </li>
-    <li nz-menu-item>
-        <i nz-icon nzType="setting"></i>
-        待定
-    </li>
-    
-    <li nz-menu-item>
-        <i nz-icon nzType="github"></i>
-        GitHub
-        <a href="https://github.com/webkcom" target="_blank" rel="noopener noreferrer"></a>
-    </li>
-    <li nz-menu-item>
-        <i nz-icon nzType="clock-circle" nzTheme="outline"></i> 当前时间: {{date | date:"YYYY年MM月dd日 E
-        HH:mm:ss":"UTC+8":"zh"}}
-    </li>
+    <ng-container *ngIf="scrWidth>=800">
+        <li nz-menu-item nzMatchRouter [routerLink]="['/tools']" routerLinkActive="router-link-active">
+            <i nz-icon nzType="tool"></i>
+            在线工具
+        </li>
+    </ng-container>
 
+    <ng-container *ngIf="scrWidth>=900">
+        <li nz-menu-item>
+            <i nz-icon nzType="setting"></i>
+            待定
+        </li>
+    </ng-container>
 
-<!-- </ul> -->
+    <ng-container *ngIf="scrWidth>=1000">
+        <li nz-menu-item>
+            <i nz-icon nzType="github"></i>
+            GitHub
+            <a href="https://github.com/webkcom" target="_blank" rel="noopener noreferrer"></a>
+        </li>
+    </ng-container>
+
+    <ng-container *ngIf="scrWidth>=1200;else hideDate">
+        <li nz-menu-item>
+            <i nz-icon nzType="clock-circle" nzTheme="outline"></i> 当前时间: {{date | date:"YYYY年MM月dd日 E
+            HH:mm:ss":"UTC+8":"zh"}}
+        </li>
+    </ng-container>
+    <ng-template #hideDate>
+        <li nz-submenu nzIcon="unordered-list">
+            <ul>
+                <ng-container *ngIf="scrWidth<700">
+                    <li nz-menu-item nzMatchRouter [routerLink]="['/homepage']" routerLinkActive="router-link-active">
+                        首页
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="scrWidth<800">
+                    <li nz-menu-item nzMatchRouter [routerLink]="['/tools']" routerLinkActive="router-link-active">
+                        在线工具
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="scrWidth<900">
+                    <li nz-menu-item>
+                        待定
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="scrWidth<1000">
+                    <li nz-menu-item>
+                        GitHub
+                        <a href="https://github.com/webkcom" target="_blank" rel="noopener noreferrer"></a>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="scrWidth<1200">
+                    <li nz-submenu nzTitle="日期">
+                        <ul>
+                            <li nz-menu-item>{{date | date:"YYYY年MM月dd日 E
+                                HH:mm:ss":"UTC+8":"zh"}}</li>
+                        </ul>
+                    </li>
+                </ng-container>
+
+            </ul>
+        </li>
+    </ng-template>
+</ul>

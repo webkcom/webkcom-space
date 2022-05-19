@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'ul[nz-menu][app-navigation]',
+    selector: 'app-navigation',
     templateUrl: './navigation.component.html',
     styleUrls: ['./navigation.component.less'],
 })
 
 export class NavigationComponent implements OnInit {
+    @Input() scrWidth!:number;
     date!: number;
     constructor() {
         setInterval(() => {
