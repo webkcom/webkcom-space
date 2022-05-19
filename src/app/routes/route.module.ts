@@ -7,24 +7,26 @@ import { NgZorroAntdModule } from '../share/ng-zorro-antd.module';
 
 
 import { HeaderComponent } from '../layout/header/header.component';
+import { LogoComponent } from '../layout/header/logo/logo.component';
+import { NavigationComponent } from '../layout/header/navigation/navigation.component';
+import { SearchbarComponent } from '../layout/header/searchbar/searchbar.component';
+
 import { FooterComponent } from '../layout/footer/footer.component';
 import { LayoutComponent } from '../layout/layout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ToolsComponent } from './tools/tools.component';
-import { PasswdGenComponent } from './passwdgen/passwdgen.component';
-import { IPDetectorComponent } from './ipdetector/ipdetector.component';
+import { PasswdGenComponent } from './tools/passwdgen/passwdgen.component';
+import { IPDetectorComponent } from './tools/ipdetector/ipdetector.component';
 import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 
-import { IconService } from '../services/icon/icon.service';
-
-
-
-
 
 const COMPONENTS: any[] = [
     HeaderComponent,
+    LogoComponent,
+    NavigationComponent,
+    SearchbarComponent,
     FooterComponent,
     LayoutComponent,
     HomepageComponent,
@@ -46,6 +48,6 @@ const COMPONENTS: any[] = [
         NgZorroAntdModule,
       ],
     declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
-    providers: [IconService]
+    providers: []
   })
 export class RoutesModule {}
