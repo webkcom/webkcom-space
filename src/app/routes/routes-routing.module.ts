@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from '../layout/layout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ToolsComponent } from './tools/tools.component';
-import { PasswdGenComponent } from './passwdgen/passwdgen.component';
-import { IPDetectorComponent } from './ipdetector/ipdetector.component';
+import { PasswdGenComponent } from './tools/passwdgen/passwdgen.component';
+import { IPDetectorComponent } from './tools/ipdetector/ipdetector.component';
 
 import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
