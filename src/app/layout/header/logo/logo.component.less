@@ -1,16 +1,17 @@
-@import '../../../../theme.less';
-
-#logo strong {
-    font-weight: 500;
+@header-height:64px;
+.logo {
+    strong{
+        font-weight: 500;
+    }
 }
 
-#logo {
+.logo {
     height: @header-height;
+    line-height: @header-height;
     padding-left: 40px;
     overflow: hidden;
-    color: @site-heading-color;
+    color:fade(black,84%);
     font-size: 18px;
-    line-height: @header-height;
     white-space: nowrap;
     text-decoration: none;
 
