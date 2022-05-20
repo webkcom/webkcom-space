@@ -1,13 +1,13 @@
 <div nz-row>
   <li nz-col nzSpan="6"></li>
   <div class="content" nz-col nzSpan="12">
-    <nz-card nzTitle="密码生成器" [nzExtra]="passwdGen">
+    <nz-card nzTitle="密码生成器" [nzExtra]="passwdGen" nzHoverable>
       <p>随机密码生成器</p>
     </nz-card>
     <ng-template #passwdGen>
       <a nzMatchRouter [routerLink]="['passwdgen']" routerLinkActive="router-link-active">查看详细</a>
     </ng-template>
-    <nz-card nzTitle="IP地址查询" [nzExtra]="ipDetector">
+    <nz-card nzTitle="IP地址查询" [nzExtra]="ipDetector" nzHoverable>
       <p>IP地址查询器</p>
     </nz-card>
     <ng-template #ipDetector>
