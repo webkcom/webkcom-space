@@ -5,7 +5,6 @@ import { LayoutComponent } from '../layout/layout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ToolsComponent } from './tools/tools.component';
 import { PasswdGenComponent } from './tools/passwdgen/passwdgen.component';
-import { IPDetectorComponent } from './tools/ipdetector/ipdetector.component';
 
 import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
       { path: 'homepage', component: HomepageComponent },
       { path: 'tools',component: ToolsComponent },
       { path: 'tools/passwdgen',component: PasswdGenComponent},
-      { path: 'tools/ipdetector',component: IPDetectorComponent},
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
       { path: '500', component: Error500Component },
