@@ -2,27 +2,37 @@
     <li nz-col nzSpan="6"></li>
     <nz-card nz-col nzSpan="12" nzHoverable>
         <p class="description">一个在线的密码生成器</p>
-
-        <h1><strong>{{value}}</strong></h1>
         <div nz-row>
             <p class="length">密码长度</p>
-            <nz-slider nz-col nzSpan="16" [(ngModel)]="length" [nzMin]="3" [nzMax]="20"></nz-slider>
-            <nz-input-number class="input-number" [nzMin]="3" [nzMax]="20" [(ngModel)]="length"></nz-input-number>
+            <nz-slider nz-col nzSpan="16" [(ngModel)]="length" [nzMin]="6" [nzMax]="32"></nz-slider>
+            <nz-input-number class="input-number" [nzSize]="'small'" [nzMin]="6" [nzMax]="32" [(ngModel)]="length"></nz-input-number>
         </div>
-
+        <div nz-row>
+            <p class="count">密码数量</p>
+            <nz-slider nz-col nzSpan="16" [(ngModel)]="count" [nzMin]="1" [nzMax]="100"></nz-slider>
+            <nz-input-number class="input-number" [nzSize]="'small'" [nzMin]="1" [nzMax]="100" [(ngModel)]="count"></nz-input-number>
+        </div>
         <div class="conditions">
             <nz-space>
-                <label *nzSpaceItem nz-checkbox [(ngModel)]="containNumbers">
+                <label nz-tooltip [nzTooltipTitle]=str[0] *nzSpaceItem nz-checkbox [(ngModel)]="containNumbers">
                     <span>数字</span>
                 </label>
-                <label *nzSpaceItem nz-checkbox [(ngModel)]="containLetters">
-                    <span>字母</span>
+                <label nz-tooltip [nzTooltipTitle]=str[1] *nzSpaceItem nz-checkbox [(ngModel)]="containUppercase">
+                    <span>大写字母</span>
                 </label>
-                <label *nzSpaceItem nz-checkbox [(ngModel)]="containSymbols">
-                    <span>符号</span>
+                <label  nz-tooltip [nzTooltipTitle]=str[2] *nzSpaceItem nz-checkbox [(ngModel)]="containLowercase">
+                    <span>小写字母</span>
+                </label>
+                <label  nz-tooltip [nzTooltipTitle]=str[3] *nzSpaceItem nz-checkbox [(ngModel)]="containSpchar">
+                    <span>特殊字符</span>
                 </label>
             </nz-space>
-            <button nz-button nzType="primary"(click)="getString()">生成密码</button>
+        </div>
+        <div class="button">
+            <button nz-button nzType="primary" (click)="getString()">生成密码</button>
+        </div>
+        <div class="output">
+            <textarea [(ngModel)]="value" nz-input placeholder="生成的密码将显示在这里" [nzAutosize]="{ minRows: 5, maxRows: 20 }"></textarea>
         </div>
     </nz-card>
     <li nz-col nzSpan="6"></li>

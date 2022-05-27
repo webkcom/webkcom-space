@@ -9,32 +9,37 @@ import { PasswdGenService } from 'src/app/services/tools/passwdgen/passwdgen.ser
 export class PasswdGenComponent implements OnInit {
   value: any;
   length = 3;
-  numbers !: boolean;
-  letters !: boolean;
-  symbols !: boolean;
+  count = 1;
+  str: string[]=["0-9","A-Z","a-z","! \" # $ % & ' ( ) * + ' - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~"];
   containNumbers = false;
-  containLetters = false;
-  containSymbols = false;
+  containUppercase = false;
+  containLowercase = false;
+  containSpchar = false;
 
   constructor(private passwdGen: PasswdGenService) { }
 
   ngOnInit(): void {
   }
   getString() {
-    if (!this.containNumbers && !this.containLetters && !this.containSymbols) {
+    if (!this.containNumbers && 
+      !this.containUppercase && 
+      !this.containLowercase && 
+      !this.containSpchar){
       window.alert("请至少选择一项条件");
     }
     else {
       let conditions = {
         numbers: this.containNumbers,
-        letters: this.containLetters,
-        symbols: this.containSymbols,
-        length: this.length
+        uppercase: this.containUppercase,
+        lowercase: this.containLowercase,
+        spchar: this.containSpchar,
+        length: this.length,
+        count: this.count
       }
 
       this.passwdGen.getResult(conditions)
         .subscribe((result) => this.value = Object.values(result));
     }
-  }
 
+  }
 }

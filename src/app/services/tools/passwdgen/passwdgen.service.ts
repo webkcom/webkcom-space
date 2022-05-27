@@ -17,7 +17,13 @@ export class PasswdGenService {
     };
     // 从后台获取处理过后的字符串
     public getResult(conditions: any) {
-        var url = this.apiUrl+'/GetResult?option1='+conditions.numbers+'&option2='+conditions.letters+'&option3='+conditions.symbols+'&length='+conditions.length;
+        var url = this.apiUrl+
+        '/GetResult?containNumbers='+conditions.numbers+
+        '&containUppercase='+conditions.uppercase+
+        '&containLowercase='+conditions.lowercase+
+        '&containSpchar='+conditions.spchar+
+        '&strLength='+conditions.length+
+        '&count='+conditions.count;
         // return this.httpClient.get(this.url,{responseType: 'text'}).pipe(catchError(this.handleError));
         return this.httpClient.get(url).pipe(catchError(this.handleError));
     }
