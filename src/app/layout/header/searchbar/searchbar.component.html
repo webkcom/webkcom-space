@@ -1,8 +1,11 @@
 <div class="searchbar">
-  <div>
-    <i nz-icon nzType="search"></i>
-  </div>
-  <div>
-    <input nz-input placeholder="在webkcom.club中搜索" nzBorderless />
-  </div>
+  <ng-container *ngIf="scrWidth>=600">
+    <div>
+      <i nz-icon nzType="search"></i>
+    </div>
+    <div>
+      <input nz-input placeholder="在webkcom-space中搜索" nzBorderless />
+    </div>
+  </ng-container>
+
 </div>
