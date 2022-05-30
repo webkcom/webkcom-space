@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IconService } from 'src/app/services/icon/icon.service';
-
 
 @Component({
   selector: 'app-homepage',
@@ -10,11 +8,8 @@ import { IconService } from 'src/app/services/icon/icon.service';
 export class HomepageComponent implements OnInit {
   isVisible = false;
   isVisited = false;
-  date!: number;
-  constructor(private iconService: IconService) {
-    setInterval(() => {
-      this.date = Date.now();
-    }, 1000);
+  constructor() {
+
    }
   // 第一次出现弹窗且根据sessionStorage只显示一次,浏览器关闭后sessionStorage数据被清除
   showModal(): void {
@@ -34,7 +29,6 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.date = Date.now();
     this.showModal();
     this.isVisited = true;
     sessionStorage.setItem("isVisited", "false");

@@ -1,0 +1,76 @@
+<div class="tips">
+    <nz-modal [(nzVisible)]="isVisible" nzTitle="入站提醒" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+        <ng-container *nzModalContent>
+            <p>亲爱的访客你好：</p>
+            <p class="welcome">欢迎来到WEBKCOM的编程驿站！
+                我是一名普通的上班族，本站可以看作是我个人进行编程练习的平台，
+                我会不定时将所学运用到这个网站，网站源码也会在GitHub上同步更新。
+                希望这个小小的站点能帮助到更多喜爱编程的人。
+            </p>
+            <p class="author-name">WEBKCOM</p>
+        </ng-container>
+    </nz-modal>
+</div>
+
+<div class="homepage" nz-row>
+    <div nz-col nzSpan="3" nzOffset="1">
+        <nz-card nzHoverable nzTitle="Card title" [nzExtra]="extraTemplate">
+            <p>Card content</p>
+            <p>Card content</p>
+            <p>Card content</p>
+        </nz-card>
+        <ng-template #extraTemplate>
+            <a>More</a>
+        </ng-template>
+    </div>
+
+    <div nz-col nzSpan="4" nzOffset="1" class="column-one">
+        <nz-card nzTitle="Angular" nzHoverable [nzExtra]="angularExtraTemplate" [nzCover]="angularTemplate">
+            <nz-card-meta nzTitle="Angular: 现代Web开发平台" nzDescription="https://angular.cn"></nz-card-meta>
+        </nz-card>
+        <ng-template #angularExtraTemplate>
+            <a href="https://angular.cn" target="_blank" rel="noopener noreferrer">详细内容</a>
+        </ng-template>
+        <ng-template #angularTemplate>
+            <img alt="angular" src="../../../assets/images/angular.svg" />
+        </ng-template>
+
+        
+    </div>
+    <div nz-col nzSpan="4" nzOffset="1" class="column-two">
+        <nz-card nzTitle="NG-ZORRO" nzHoverable [nzExtra]="ngzorroExtraTemplate" [nzCover]="ngzorroTemplate">
+            <nz-card-meta nzTitle="NG-ZORRO: 企业级 UI 设计语言和 Angular UI 组件库"
+                nzDescription="https://ng.ant.design/docs/introduce/zh"></nz-card-meta>
+        </nz-card>
+        <ng-template #ngzorroExtraTemplate>
+            <a href="https://ng.ant.design/docs/introduce/zh" target="_blank" rel="noopener noreferrer">详细内容</a>
+        </ng-template>
+        <ng-template #ngzorroTemplate>
+            <img alt="NG-ZORRO"
+                src="../../../assets/images/ng-zorro.svg" />
+        </ng-template>
+    </div>
+    <div nz-col nzSpan="4" nzOffset="1" class="column-three">
+        <nz-card nzTitle=".NET" nzHoverable [nzExtra]="dotnetExtraTemplate" [nzCover]="dotnetTemplate">
+            <nz-card-meta nzTitle=".NET: 一个跨平台的高性能开源框架"
+                nzDescription="https://docs.microsoft.com/zh-CN/dotnet/"></nz-card-meta>
+        </nz-card>
+        <ng-template #dotnetExtraTemplate>
+            <a href="https://docs.microsoft.com/zh-CN/dotnet/" target="_blank" rel="noopener noreferrer">详细内容</a>
+        </ng-template>
+        <ng-template #dotnetTemplate>
+            <img alt="dotnet"
+                src="../../../assets/images/dotnet.svg" />
+        </ng-template>
+    </div>
+    <div nz-col nzSpan="3" nzOffset="1">
+        <nz-card nzHoverable nzTitle="Card title" [nzExtra]="extraTemplate">
+            <p>Card content</p>
+            <p>Card content</p>
+            <p>Card content</p>
+        </nz-card>
+        <ng-template #extraTemplate>
+            <a>More</a>
+        </ng-template>
+    </div>
+</div>

@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
   styles: [
     `
       .background {
-        background-image: url('../../../assets/images/403.svg');
         backgroun-size: cover;
         background-repeat:no-repeat;
         background-position:center;
