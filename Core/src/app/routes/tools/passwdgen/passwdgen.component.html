@@ -4,8 +4,8 @@
         <p class="description">一个在线的密码生成器</p>
         <div nz-row>
             <p class="length">密码长度</p>
-            <nz-slider nz-col nzSpan="16" [(ngModel)]="length" [nzMin]="6" [nzMax]="32"></nz-slider>
-            <nz-input-number class="input-number" [nzSize]="'small'" [nzMin]="6" [nzMax]="32" [(ngModel)]="length"></nz-input-number>
+            <nz-slider nz-col nzSpan="16" [(ngModel)]="strLength" [nzMin]="6" [nzMax]="32"></nz-slider>
+            <nz-input-number class="input-number" [nzSize]="'small'" [nzMin]="6" [nzMax]="32" [(ngModel)]="strLength"></nz-input-number>
         </div>
         <div nz-row>
             <p class="count">密码数量</p>
