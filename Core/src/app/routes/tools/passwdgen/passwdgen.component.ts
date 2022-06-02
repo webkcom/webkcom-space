@@ -8,7 +8,7 @@ import { PasswdGenService } from 'src/app/services/tools/passwdgen/passwdgen.ser
 })
 export class PasswdGenComponent implements OnInit {
   value: any;
-  length = 3;
+  strLength = 6;
   count = 1;
   str: string[]=["0-9","A-Z","a-z","! \" # $ % & ' ( ) * + ' - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~"];
   containNumbers = false;
@@ -29,16 +29,15 @@ export class PasswdGenComponent implements OnInit {
     }
     else {
       let conditions = {
-        numbers: this.containNumbers,
-        uppercase: this.containUppercase,
-        lowercase: this.containLowercase,
-        spchar: this.containSpchar,
-        length: this.length,
+        containnumbers: this.containNumbers,
+        containuppercase: this.containUppercase,
+        containlowercase: this.containLowercase,
+        containspchar: this.containSpchar,
+        strlength: this.strLength,
         count: this.count
       }
 
-      this.passwdGen.getResult(conditions)
-        .subscribe((result) => this.value = Object.values(result));
+      this.value = this.passwdGen.getResult(conditions);
     }
 
   }
