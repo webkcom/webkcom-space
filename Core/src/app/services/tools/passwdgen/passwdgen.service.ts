@@ -46,7 +46,7 @@ export class PasswdGenService {
         do {
             sum = 0;
             for (let i = 0; i < arrlength; i++) {
-                randomNum[i] = Math.floor(Math.random() * 9) + 1;
+                randomNum[i] = Math.floor(Math.random() * (strlength-arrlength+1)+1);
                 sum += randomNum[i];
             }
         }
